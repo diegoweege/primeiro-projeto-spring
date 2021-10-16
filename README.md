@@ -3,3 +3,5 @@
 # Evolução da Aula 3
 
 - Primeiro exercício realizado
+
+- Segundo exercício
