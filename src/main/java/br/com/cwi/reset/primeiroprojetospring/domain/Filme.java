@@ -1,14 +1,20 @@
 package br.com.cwi.reset.primeiroprojetospring.domain;
 
 import br.com.cwi.reset.primeiroprojetospring.exception.AvaliacaoForaDoPadraoException;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDateTime;
 
 public class Filme {
 
+    private Long id;
     private String nome;
     private String descricao;
     private Integer duracao;
     private Integer anoLancamento;
     private Double avaliacao;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime data;
     private Diretor diretor;
 
     public Filme () {
@@ -24,6 +30,14 @@ public class Filme {
         this.anoLancamento = anoLancamento;
         this.avaliacao = avaliacao;
         this.diretor = diretor;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -72,5 +86,13 @@ public class Filme {
 
     public void setDiretor(final Diretor diretor) {
         this.diretor = diretor;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
     }
 }
